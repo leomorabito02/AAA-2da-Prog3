@@ -17,7 +17,7 @@ private:
     unsigned int (*hashFuncP)(K clave);
 
 public:
-    explicit HashMapList(unsigned int k);
+    explicit HashMapList(unsigned int k); // explicit = entero sin signo
 
     HashMapList(unsigned int k, unsigned int (*hashFuncP)(K clave));
 
@@ -31,10 +31,9 @@ public:
 
     bool esVacio();
 
-    void print();
 };
 /**
- * constructor
+ * constructor, crea una lista vacía en cada posicion
 */
 template<class K, class T>
 HashMapList<K, T>::HashMapList(unsigned int k) {
@@ -67,7 +66,7 @@ HashMapList<K, T>::~HashMapList() {
     }
 }
 /**
- * 
+ * ingresa los datos a la ultima pos de la lista, en su posicion en el hash
 */
 template<class K, class T>
 void HashMapList<K, T>::put(K clave, T valor) {
@@ -131,27 +130,11 @@ void HashMapList<K, T>::getList(K clave) {
         throw 404;
     }
 
-    Nodo<HashEntry<K, T>> *aux = tabla[pos]->getInicio();
+    Nodo<HashEntry<K, T>> *aux = tabla[pos]->getDato(0);
 
     while (aux != NULL) {
         std::cout << aux->getDato().getValor() << std::endl;
         aux = aux->getSiguiente();
-    }
-}
-/**
- * imprime el hash
-*/
-template<class K, class T>
-void HashMapList<K, T>::print() {
-    cout << "i" << "\t" << "Clave" << "\t" << "Valor" << endl;
-    cout << "---------------------" << endl;
-    for (int i = 0; i < tamanio; i++) {
-        cout << i << "\t";
-        if (tabla[i] != NULL) {
-            cout << tabla[i]->getClave() << "\t";
-            cout << tabla[i]->getValor();
-        }
-        cout << endl;
     }
 }
 #endif // U05_HASH_HASHMAP_HASHMAPLIST_H_
