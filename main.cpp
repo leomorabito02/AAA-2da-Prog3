@@ -1,6 +1,6 @@
-#include "HashMap/HashMapList.h"
+#include "HashMapList.h"
 #include <fstream>
-#include "funciones/funciones.h"
+#include "funciones.h"
 int main(){
     int tamanio=10;
     HashMapList<string, int> MyHashMap(tamanio, &miHashFunc);
