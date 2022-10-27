@@ -1,9 +1,10 @@
+using namespace std;
 #include <iostream>
 #include <fstream>
-#include "HashMapList.h"
-#include "funciones.h"
-#include "PalabrasLetras.h"
-using namespace std;
+#include "HashMap/HashMapList.h"
+#include "Funciones/funciones.h"
+#include "Funciones/PalabrasLetras.h"
+
 
 int main(){
     int tamanio=10;
@@ -18,12 +19,12 @@ int main(){
 
     Caracteres letras = {"a", 1};
     Caracteres palabras = {"juan",1 };
-    
+
 
     MyHashMap.put(letras.caract, letras);
     MyHashMap.put(palabras.caract, palabras);
-    
+
     return 0;
-    
-    }
+
+}
 
