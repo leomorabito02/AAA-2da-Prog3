@@ -1,13 +1,9 @@
-
 #include <iostream>
 #include <fstream>
 #include "HashMapList.h"
 #include "funciones.h"
 #include "PalabrasLetras.h"
-
 using namespace std;
-
-
 
 int main(){
     int tamanio=10;
