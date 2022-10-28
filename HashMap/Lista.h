@@ -2,7 +2,7 @@
 #define U02_LISTAS_LISTA_LISTA_H_
 
 #include <iostream>
-#include "nodo.h"
+#include "Nodo.h"
 
 /**
  * Clase que implementa una Lista Enlazada genérica, ya que puede
