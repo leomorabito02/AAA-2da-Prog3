@@ -1,30 +1,15 @@
-using namespace std;
-#include <iostream>
+#include "HashMapList.h"
 #include <fstream>
-#include "HashMap/HashMapList.h"
-#include "Funciones/funciones.h"
-#include "Funciones/PalabrasLetras.h"
-
-
+#include "funciones.h"
 int main(){
     int tamanio=10;
-    ifstream archivo;
-    string textoArchivo;
-    HashMapList<string, Caracteres> MyHashMap(tamanio, &miHashFunc);
+    HashMapList<string, int> MyHashMap(tamanio, &miHashFunc);
 
-    archivo.open("texto.txt", ios::in); //in lectura on escritura
-    while(!archivo.eof()){
-        getline(archivo,textoArchivo);
-    }
+    MyHashMap.put("abc123", 1995);
+    MyHashMap.put("fpi293", 2006);
+    MyHashMap.put("pkz111", 2016);
+    MyHashMap.put("nzy200", 2009);
 
-    Caracteres letras = {"a", 1};
-    Caracteres palabras = {"juan",1 };
-
-
-    MyHashMap.put(letras.caract, letras);
-    MyHashMap.put(palabras.caract, palabras);
-
-    return 0;
-
-}
+MyHashMap.getList("abc123");
+     }
 

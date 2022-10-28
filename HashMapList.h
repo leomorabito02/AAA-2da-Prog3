@@ -2,7 +2,7 @@
 #define U05_HASH_HASHMAP_HASHMAPLIST_H_
 
 #include "HashEntry.h"
-#include "Lista.h"
+#include "lista.h"
 
 //Tabla hash con manejo de colisiones usando listas enlazadas
 template <class K, class T>

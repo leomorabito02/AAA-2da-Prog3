@@ -1,7 +1,6 @@
 #ifndef U05_HASH_HASHMAP_HASHMAP_H_
 #define U05_HASH_HASHMAP_HASHMAP_H_
-using namespace std;
-#include <iostream>
+
 #include "HashEntry.h"
 
 //Función HASH realiza alguna operación (la que querramos)
