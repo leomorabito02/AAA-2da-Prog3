@@ -1,26 +1,8 @@
-
-#include <iostream>
-#include <fstream>
 #include "HashMapList.h"
+#include <fstream>
 #include "funciones.h"
-#include "PalabrasLetras.h"
-
-using namespace std;
-
-
-
 int main(){
-    ifstream archivo;
-    string textoArchivo;
-   
     
-
-    archivo.open("texto.txt", ios::in); //in lectura on escritura
-    while(!archivo.eof()){
-        getline(archivo,textoArchivo);
-
-    }
-    HashMapList<string, Caracteres> MyHashMap(textoArchivo.length(), &miHashFunc);
 
 
 
