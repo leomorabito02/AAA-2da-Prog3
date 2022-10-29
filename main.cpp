@@ -1,9 +1,8 @@
 #include "HashMapList.h"
 #include <fstream>
+#include <cstring>
 #include "funciones.h"
 int main(){
-    
-
 
 
  /*
@@ -15,7 +14,7 @@ int main(){
     MyHashMap.put(palabras.caract, palabras);
     
  */
-    
+
     return 0;
     
     }
