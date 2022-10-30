@@ -1,8 +1,7 @@
 using namespace std;
 #include <iostream>
 #include <cstring>
-unsigned int miHashFunc(string clave);
-void quicksort(string *arr, int inicio, int fin);
+
 class Texto{
 private:
     string texto;
@@ -18,3 +17,8 @@ public:
     int contarLetras(string);
     int contarEspacios(string);
 };
+
+unsigned int miHashFunc(string clave);
+void QuicksortAuxiliar(string&, int , int );
+void Quicksort(string&);
+void imprime(string&);
