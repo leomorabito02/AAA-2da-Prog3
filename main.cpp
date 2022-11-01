@@ -18,6 +18,5 @@ string prueba = "juan";
     Quicksort(prueba);
     imprime(prueba);
     return 0;
-    
     }
 

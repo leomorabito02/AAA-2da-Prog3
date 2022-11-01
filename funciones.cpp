@@ -11,31 +11,41 @@ string Texto::getTexto() {
 void Texto::setTexto(string texto) {
     this->texto = texto;
 }
+
 int Texto::getTamanioTexto() {
     return tamanioTexto;
 }
 
 void Texto::setTamanioTexto(int tamanioTexto) {
-this->tamanioTexto= tamanioTexto;
+    tamanioTexto = texto.length();
+    this->tamanioTexto = tamanioTexto;
 }
-int Texto::contarPalabras(string texto) {
-    int cantidadPalabras=1;
-    for (int i = 0; i < texto.length(); i++) {
 
-        if (texto[i] == ' ' || texto[i]== '\n') {
-            cantidadPalabras+=1;
+int Texto::contarPalabras(string texto) {
+    int cantidadPalabras = 1;
+    for (int i = 0; i < tamanioTexto; i++) {
+        if (texto[i] == ' ' || texto[i] == '\n') {
+            cantidadPalabras ++;
         }
 
     }
+    return cantidadPalabras;
 }
 
 int Texto::contarLetras(string texto) {
-
+    int contLetras = 0;
+    for (int i = 0; i < tamanioTexto; i++) {
+        if (isalpha(texto[i])) {
+            contLetras++;
+        }
+    }
+    return contLetras;
 }
 
 int Texto::contarEspacios(string texto) {
 
 }
+
 unsigned int miHashFunc(string clave) {
     unsigned int aux = 0;
     for (int i = 0; i < clave.length(); i++) {

@@ -1,7 +1,7 @@
 using namespace std;
 #include <iostream>
 #include <cstring>
-
+#include <ctype.h>
 class Texto{
 private:
     string texto;
