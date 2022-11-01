@@ -2,21 +2,29 @@
 #include <fstream>
 #include <cstring>
 #include "funciones.h"
-int main(){
+
+int main() {
 
 
- /*
-    Caracteres letras = {"a", 1};
-    Caracteres palabras = {"juan",1 };
-    
+    /*
+       Caracteres letras = {"a", 1};
+       Caracteres palabras = {"juan",1 };
 
-    MyHashMap.put(letras.caract, letras);
-    MyHashMap.put(palabras.caract, palabras);
-    
- */
-string prueba = "juan";
+
+       MyHashMap.put(letras.caract, letras);
+       MyHashMap.put(palabras.caract, palabras);
+
+    */
+    Texto t;
+    string prueba = "la vaca lola, tiene cabeza y tiene cola. ";
+
+    t.setTexto(prueba);
     Quicksort(prueba);
     imprime(prueba);
+
+    cout << "letras: " << t.contarLetras();
+    cout << "\nPalabras: "<< t.contarPalabras();
+
     return 0;
-    }
+}
 

@@ -1,8 +1,6 @@
 #include "funciones.h"
 
-Texto::Texto(string texto) {
-    this->texto = texto;
-}
+Texto::Texto(){};
 
 string Texto::getTexto() {
     return texto;
@@ -21,18 +19,18 @@ void Texto::setTamanioTexto(int tamanioTexto) {
     this->tamanioTexto = tamanioTexto;
 }
 
-int Texto::contarPalabras(string texto) {
+int Texto::contarPalabras() {
     int cantidadPalabras = 1;
     for (int i = 0; i < tamanioTexto; i++) {
         if (texto[i] == ' ' || texto[i] == '\n') {
-            cantidadPalabras ++;
+            cantidadPalabras++;
         }
 
     }
     return cantidadPalabras;
 }
 
-int Texto::contarLetras(string texto) {
+int Texto::contarLetras() {
     int contLetras = 0;
     for (int i = 0; i < tamanioTexto; i++) {
         if (isalpha(texto[i])) {
@@ -42,8 +40,14 @@ int Texto::contarLetras(string texto) {
     return contLetras;
 }
 
-int Texto::contarEspacios(string texto) {
-
+int Texto::contarSaltosLinea() {
+    int contSaltosLinea = 0;
+    for (int i = 0; i < tamanioTexto; i++) {
+        if (texto[i] == '\n') {
+            contSaltosLinea++;
+        }
+    }
+    return contSaltosLinea;
 }
 
 unsigned int miHashFunc(string clave) {

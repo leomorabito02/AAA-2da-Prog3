@@ -7,15 +7,15 @@ private:
     string texto;
     int tamanioTexto;
 public:
-    Texto() = default;
-    Texto(string);
+    Texto();
+
     string getTexto();
     void setTexto(string);
     int getTamanioTexto();
     void setTamanioTexto(int);
-    int contarPalabras(string);
-    int contarLetras(string);
-    int contarEspacios(string);
+    int contarPalabras();
+    int contarLetras();
+    int contarSaltosLinea();
 };
 
 unsigned int miHashFunc(string clave);
