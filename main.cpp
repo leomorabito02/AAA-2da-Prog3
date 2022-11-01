@@ -16,14 +16,16 @@ int main() {
 
     */
     Texto t;
-    string prueba = "la vaca lola, tiene cabeza y tiene cola. ";
+    string prueba = "la vaca lola, tiene cabeza y tiene cola.";
+    int tamanio=prueba.length();
+    cout<<tamanio;
 
     t.setTexto(prueba);
     Quicksort(prueba);
     imprime(prueba);
 
-    cout << "letras: " << t.contarLetras();
-    cout << "\nPalabras: "<< t.contarPalabras();
+    cout << "letras: " << t.contarLetras(tamanio);
+    cout << "\nPalabras: "<< t.contarPalabras(tamanio);
 
     return 0;
 }

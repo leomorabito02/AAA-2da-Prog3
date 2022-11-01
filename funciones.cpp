@@ -2,6 +2,7 @@
 
 Texto::Texto(){};
 
+
 string Texto::getTexto() {
     return texto;
 }
@@ -10,16 +11,17 @@ void Texto::setTexto(string texto) {
     this->texto = texto;
 }
 
+/*
 int Texto::getTamanioTexto() {
     return tamanioTexto;
 }
 
-void Texto::setTamanioTexto(int tamanioTexto) {
-    tamanioTexto = texto.length();
-    this->tamanioTexto = tamanioTexto;
+void Texto::setTamanioTexto(int _tamanioTexto) {
+    _tamanioTexto = texto.length();
+    _tamanioTexto = tamanioTexto;
 }
-
-int Texto::contarPalabras() {
+*/
+int Texto::contarPalabras(int tamanioTexto) {
     int cantidadPalabras = 1;
     for (int i = 0; i < tamanioTexto; i++) {
         if (texto[i] == ' ' || texto[i] == '\n') {
@@ -30,7 +32,7 @@ int Texto::contarPalabras() {
     return cantidadPalabras;
 }
 
-int Texto::contarLetras() {
+int Texto::contarLetras(int tamanioTexto) {
     int contLetras = 0;
     for (int i = 0; i < tamanioTexto; i++) {
         if (isalpha(texto[i])) {
@@ -40,7 +42,7 @@ int Texto::contarLetras() {
     return contLetras;
 }
 
-int Texto::contarSaltosLinea() {
+int Texto::contarSaltosLinea(int tamanioTexto) {
     int contSaltosLinea = 0;
     for (int i = 0; i < tamanioTexto; i++) {
         if (texto[i] == '\n') {

@@ -5,17 +5,16 @@ using namespace std;
 class Texto{
 private:
     string texto;
-    int tamanioTexto;
+    
 public:
     Texto();
-
+    Texto (string);
     string getTexto();
     void setTexto(string);
-    int getTamanioTexto();
-    void setTamanioTexto(int);
-    int contarPalabras();
-    int contarLetras();
-    int contarSaltosLinea();
+    
+    int contarPalabras(int);
+    int contarLetras(int);
+    int contarSaltosLinea(int);
 };
 
 unsigned int miHashFunc(string clave);
