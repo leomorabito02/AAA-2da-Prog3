@@ -31,7 +31,7 @@ public:
 
     bool esVacio();
 
-    void print();
+
 };
 
 template <class K, class T>
