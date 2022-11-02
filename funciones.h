@@ -17,6 +17,7 @@ public:
     int contarLetras();
     int contarSaltosLinea();
     void bubbleAlfabetico (string);
+    void MostrarDiferentes();
 };
 
 unsigned int miHashFunc(string clave);
