@@ -7,10 +7,18 @@ int main() {
     string prueba = "la vaca lola, tiene cabeza y tiene cola.";
     Texto t;
     t.setTamanioTexto(prueba.length());
-    HashMapList<string, int> MyHashMap(prueba.length()*2, &miHashFunc);
 
+    t.bubbleAlfabetico(prueba);
+
+    /*
+    HashMapList<string, int> MyHashMap(prueba.length()*2, &miHashFunc);
+    */
 
 
     return 0;
 }
+
+
+
+
 
