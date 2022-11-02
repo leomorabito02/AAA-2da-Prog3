@@ -11,30 +11,29 @@ void Texto::setTexto(string texto) {
     this->texto = texto;
 }
 
-/*
+
 int Texto::getTamanioTexto() {
-    return tamanioTexto;
+    return TamanioTexto;
 }
 
-void Texto::setTamanioTexto(int _tamanioTexto) {
-    _tamanioTexto = texto.length();
-    _tamanioTexto = tamanioTexto;
+void Texto::setTamanioTexto(int TamanioTexto) {
+    this->TamanioTexto = TamanioTexto;
+
 }
-*/
-int Texto::contarPalabras(int tamanioTexto) {
+
+int Texto::contarPalabras() {
     int cantidadPalabras = 1;
-    for (int i = 0; i < tamanioTexto; i++) {
+    for (int i = 0; i < getTamanioTexto(); i++) {
         if (texto[i] == ' ' || texto[i] == '\n') {
             cantidadPalabras++;
         }
-
     }
     return cantidadPalabras;
 }
 
-int Texto::contarLetras(int tamanioTexto) {
+int Texto::contarLetras() {
     int contLetras = 0;
-    for (int i = 0; i < tamanioTexto; i++) {
+    for (int i = 0; i < getTamanioTexto(); i++) {
         if (isalpha(texto[i])) {
             contLetras++;
         }
@@ -42,9 +41,9 @@ int Texto::contarLetras(int tamanioTexto) {
     return contLetras;
 }
 
-int Texto::contarSaltosLinea(int tamanioTexto) {
+int Texto::contarSaltosLinea() {
     int contSaltosLinea = 0;
-    for (int i = 0; i < tamanioTexto; i++) {
+    for (int i = 0; i < getTamanioTexto(); i++) {
         if (texto[i] == '\n') {
             contSaltosLinea++;
         }
@@ -62,7 +61,7 @@ unsigned int miHashFunc(string clave) {
 }
 
 /**
- * Ordena el texto ingresado alfabeticamente
+ * Ordena las letras ingresadas alfabeticamente
  * @param arr
  * @param inicio
  * @param fin
@@ -102,7 +101,10 @@ void QuicksortAuxiliar(string &cadena, int limite_izq, int limite_der) {
 void Quicksort(string &cadena) {
     QuicksortAuxiliar(cadena, 0, cadena.length() - 1);
 }
-
+/**
+ * Devuelve las letras
+ * @param cadena
+ */
 void imprime(string &cadena) {
 
     for (int i = 0; i < cadena.length(); i++) {
