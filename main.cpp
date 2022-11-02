@@ -4,7 +4,7 @@
 #include "funciones.h"
 
 int main() {
-    string prueba = "la vaca lola, tiene cabeza y tiene cola.";
+    string prueba = "la vaca lola, tiene cabeza y TIENE cola.";
     Texto t;
     t.setTamanioTexto(prueba.length());
 
@@ -13,7 +13,6 @@ int main() {
     /*
     HashMapList<string, int> MyHashMap(prueba.length()*2, &miHashFunc);
     */
-
 
     return 0;
 }

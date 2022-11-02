@@ -1,6 +1,6 @@
 #include "funciones.h"
 
-Texto::Texto(){};
+Texto::Texto() {};
 
 
 string Texto::getTexto() {
@@ -101,6 +101,7 @@ void QuicksortAuxiliar(string &cadena, int limite_izq, int limite_der) {
 void Quicksort(string &cadena) {
     QuicksortAuxiliar(cadena, 0, cadena.length() - 1);
 }
+
 /**
  * Devuelve las letras
  * @param cadena
@@ -113,54 +114,54 @@ void imprime(string &cadena) {
 }
 
 
-
-void Texto::bubbleAlfabetico(string texto){
-
+void Texto::bubbleAlfabetico(string texto) {
     string aux1;
-    int contador=1;
-    for (int i=0;i<texto.length();i++){
-        if (texto[i]==' ')
-        {
+    int contador = 1;
+    for (int i = 0; i < texto.length(); i++) {
+        if (texto[i] == ' ') {
             contador++;
-        }    
-        texto[i]=tolower(texto[i]);             //------------------------
+        }
+        texto[i] = tolower(texto[i]);             //------------------------
     }
-    
+
     string palabras[contador];
-    string palabraAux="";
-    int index=0; //para recorrer el arreglo
-    for (int i=0;i<texto.length();i++){
-    
+    string palabraAux = "";
+    int index = 0; //para recorrer el arreglo
+    for (int i = 0; i < texto.length(); i++) {
+
         //si es un espacio volcamos todo lo guardado en palabraAux al array
-        if (texto[i]==' ')
-        {
+        if (texto[i] == ' ') {
             palabras[index] = palabraAux;
             index++;
-            palabraAux="";
-        }
-        else{ //si es una letra, la concatenamos a palabraAux para guardarla
-            palabraAux+=texto[i];
+            palabraAux = "";
+        } else { //si es una letra, la concatenamos a palabraAux para guardarla
+            palabraAux += texto[i];
         }
     }
     //agregamos la última palabra, que siempre quedará fuera del for anterior
     palabras[index] = palabraAux;
-    
+
 
 // ---
-for(int i=0;i<contador;i++){
-        for(int j=i+1;j<contador;j++){
-            if(palabras[i]>palabras[j]){ 
+    for (int i = 0; i < contador; i++) {
+        for (int j = i + 1; j < contador; j++) {
 
-                aux1 = palabras[j]; 
-                palabras[j] = palabras[i]; 
-                palabras[i] = aux1; 
+
+            if (palabras[i] > palabras[j]) {
+
+                aux1 = palabras[j];
+                palabras[j] = palabras[i];
+                palabras[i] = aux1;
             }
+
         }
-        
+    }
+    for (int i = 0; i < contador; i++) {
+        cout << palabras[i] << " ";
     }
 
-    for (int i=0;i<contador;i++){
-        cout<<"\n"<<palabras[i];
-    }
+}
+
+void Texto::MostrarDiferentes() {
 
 }
