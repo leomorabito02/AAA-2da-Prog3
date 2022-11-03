@@ -8,6 +8,7 @@ class HashEntry {
     T valor;
 
   public:
+
     HashEntry(K clave, T valor){
         this->clave = clave;
         this->valor = valor;

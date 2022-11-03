@@ -1,19 +1,15 @@
 #include "HashMapList.h"
 #include <fstream>
 #include <cstring>
-#include "funciones.h"
+#include "HashClassInst.h"
 
 int main() {
     string prueba = "la vaca lola, tiene cabeza y TIENE cola.";
-    Texto t;
-    t.setTamanioTexto(prueba.length());
+    HashMapList<string, Texto> MyHashMap(100000, &miHashFunc);
 
-    t.bubbleAlfabetico(prueba);
+    HashIn ingreso = {"juan", 1};
 
-    /*
-    HashMapList<string, int> MyHashMap(prueba.length()*2, &miHashFunc);
-    */
-
+MyHashMap.put( ingreso.palabra, ingreso);
     return 0;
 }
 

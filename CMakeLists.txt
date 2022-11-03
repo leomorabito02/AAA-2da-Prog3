@@ -1,9 +1,9 @@
 add_executable(Repos
         main.cpp
-        funciones.cpp
         funciones.h
         HashMapList.h
         HashMap.h
         HashEntry.h
         lista.h
-        nodo.h)
+        nodo.h
+        HashClassInst.h)

@@ -2,11 +2,16 @@ using namespace std;
 #include <iostream>
 #include <cstring>
 #include <ctype.h>
+#include <math.h>
+
+
 class Texto{
 private:
     string texto;
     int TamanioTexto;
+
 public:
+
     Texto();
     Texto (string);
     string getTexto();
@@ -18,6 +23,7 @@ public:
     int contarSaltosLinea();
     void bubbleAlfabetico (string);
     void MostrarDiferentes();
+
 };
 
 unsigned int miHashFunc(string clave);

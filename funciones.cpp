@@ -52,12 +52,14 @@ int Texto::contarSaltosLinea() {
 }
 
 unsigned int miHashFunc(string clave) {
-    unsigned int aux = 0;
+    unsigned int aux = 0, num;
     for (int i = 0; i < clave.length(); i++) {
-        aux += clave[i];
+        num = clave[i];
+        aux += pow (num, i);
+
     }
-    cout << "Hash de la clave " << clave << ": " << aux << endl;
-    return aux;
+    cout << "Hash de la clave " << clave << ": " << aux%100000 << endl;
+    return aux%100000;
 }
 
 /**
