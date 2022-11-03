@@ -1,6 +1,7 @@
 add_executable(Repos
         main.cpp
         funciones.h
+        funciones.cpp
         HashMapList.h
         HashMap.h
         HashEntry.h

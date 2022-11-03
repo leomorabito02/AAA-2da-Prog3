@@ -13,7 +13,7 @@ private:
 public:
 
     Texto();
-    Texto (string);
+    Texto (string, int);
     string getTexto();
     void setTexto(string);
     int getTamanioTexto();

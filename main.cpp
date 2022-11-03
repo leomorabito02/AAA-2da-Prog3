@@ -9,11 +9,6 @@ int main() {
 
     HashIn ingreso = {"juan", 1};
 
-MyHashMap.put( ingreso.palabra, ingreso);
+    MyHashMap.put(ingreso.palabra, ingreso);
     return 0;
 }
-
-
-
-
-
