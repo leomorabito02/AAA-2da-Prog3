@@ -24,15 +24,6 @@ void Texto::setTamanioTexto(int TamanioTexto) {
 
 }
 
-int Texto::contarPalabras() {
-    int cantidadPalabras = 1;
-    for (int i = 0; i < getTamanioTexto(); i++) {
-        if (texto[i] == ' ' || texto[i] == '\n') {
-            cantidadPalabras++;
-        }
-    }
-    return cantidadPalabras;
-}
 
 int Texto::contarLetras() {
     int contLetras = 0;

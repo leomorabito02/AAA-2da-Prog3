@@ -18,7 +18,6 @@ public:
     void setTexto(string);
     int getTamanioTexto();
     void setTamanioTexto(int);
-    int contarPalabras();
     int contarLetras();
     int contarSaltosLinea();
     void bubbleAlfabetico (string);
