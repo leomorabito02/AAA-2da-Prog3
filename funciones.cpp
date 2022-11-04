@@ -1,7 +1,10 @@
 #include "funciones.h"
 
 Texto::Texto() {};
-
+Texto::Texto(string texto, int tamanioTexto) {
+this->texto = texto;
+this->TamanioTexto = tamanioTexto;
+}
 
 string Texto::getTexto() {
     return texto;
@@ -167,3 +170,5 @@ void Texto::bubbleAlfabetico(string texto) {
 void Texto::MostrarDiferentes() {
 
 }
+
+

@@ -10,6 +10,7 @@ int main() {
     stringstream input_stringstream(prueba);
     HashMapList<string, int> MyHashMap(100000, &miHashFunc);
 
+
 /*
     HashIn ingreso = {"juan", 1};
 */
@@ -24,6 +25,8 @@ while (getline(input_stringstream, lectura, ' '))
 
     cout<<contador;
 }
+
+
 
 
 
