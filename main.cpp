@@ -1,18 +1,29 @@
 #include "HashMapList.h"
 #include <fstream>
+#include <sstream>
 #include <cstring>
 #include "HashClassInst.h"
 
 int main() {
+    string lectura;
     string prueba = "la vaca lola, tiene cabeza y TIENE cola.";
-    HashMapList<string, Texto> MyHashMap(100000, &miHashFunc);
+    stringstream input_stringstream(prueba);
+    HashMapList<string, int> MyHashMap(100000, &miHashFunc);
 
+/*
     HashIn ingreso = {"juan", 1};
+*/
+int contador=0;
 
-MyHashMap.put( ingreso.palabra, ingreso);
-    return 0;
+while (getline(input_stringstream, lectura, ' '))
+    {
+        MyHashMap.put( lectura, contador++);
+    }
+
+
+
+    cout<<contador;
 }
-
 
 
 

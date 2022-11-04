@@ -3,7 +3,7 @@
 
 template <class K, class T> 
 class HashEntry {
-  private:
+  protected:
     K clave;
     T valor;
 

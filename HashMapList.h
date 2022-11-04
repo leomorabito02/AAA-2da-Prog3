@@ -3,6 +3,7 @@
 
 #include "HashEntry.h"
 #include "lista.h"
+using namespace std;
 
 //Tabla hash con manejo de colisiones usando listas enlazadas
 template <class K, class T>
@@ -31,6 +32,7 @@ public:
 
     bool esVacio();
 
+    
 
 };
 
@@ -122,5 +124,8 @@ void HashMapList<K, T>::getList(K clave) { //Método que devuelve la lista segú
         aux = aux->getSiguiente();
     }
 }
+
+
+
 
 #endif // U05_HASH_HASHMAP_HASHMAPLIST_H_
