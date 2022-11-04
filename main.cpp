@@ -16,9 +16,11 @@ int main() {
 */
 int contador=0;
 
+
 while (getline(input_stringstream, lectura, ' '))
     {
-        MyHashMap.put( lectura, contador++);
+        MyHashMap.put( lectura, 1);
+        contador++;
     }
 
 
