@@ -122,5 +122,4 @@ void HashMapList<K, T>::getList(K clave) { //Método que devuelve la lista segú
         aux = aux->getSiguiente();
     }
 }
-
 #endif // U05_HASH_HASHMAP_HASHMAPLIST_H_
