@@ -1,4 +1,5 @@
 #include "funciones.h"
+#include <fstream>
 
 Texto::Texto() {};
 Texto::Texto(string texto, int tamanioTexto) {
@@ -163,3 +164,7 @@ void Texto::MostrarDiferentes() {
 }
 
 
+void Texto::lecturaTXT(){
+
+
+}

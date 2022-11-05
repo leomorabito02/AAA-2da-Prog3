@@ -22,6 +22,7 @@ public:
     int contarSaltosLinea();
     void bubbleAlfabetico (string);
     void MostrarDiferentes();
+    void lecturaTXT();
 
 };
 

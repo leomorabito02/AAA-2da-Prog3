@@ -6,9 +6,32 @@
 #include <algorithm>
 
 
+int contarSaltosLinea(string prueba) {
+    int contSaltosLinea = 0;
+    for (int i = 0; i < prueba.length(); i++) {
+        if (prueba[i] == '\n') {
+            contSaltosLinea++;
+        }
+    }
+    return contSaltosLinea;
+}
+
+
+
 int main() {
-    string lectura;
-    string prueba = "la vaca lola, tiene cabeza y TIENE cola.";
+    
+ifstream archivo;
+string lectura;
+string prueba;
+
+
+archivo.open("prueba.txt",ios::in);
+
+getline(archivo,prueba);
+
+archivo.close();
+
+    
     string caracts = ",.;:'-*+^=&%#$?¡¿!{[}]()";
     for (char c: caracts){
         prueba.erase(remove(prueba.begin(), prueba.end(), c), prueba.end());
@@ -29,5 +52,8 @@ while (getline(input_stringstream, lectura, ' '))
         contador++;
     }
 
-    cout<<contador;
+    cout<<contador<<endl;
+
+cout<<"Saltos de linea: "<<contarSaltosLinea(prueba);
+    
 }
