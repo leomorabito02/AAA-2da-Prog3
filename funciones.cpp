@@ -63,51 +63,62 @@ unsigned int miHashFunc(string clave) {
  * @param inicio
  * @param fin
  */
-void QuicksortAuxiliar(string &cadena, int limite_izq, int limite_der) {
+void quicksort(string &cadena, int limite_izq, int limite_der) {
+    int i = limite_izq;
+    // index for the "right-to-left scan"
+    int j = limite_der;
 
-    int izq = limite_izq;
-    int der = limite_der;
-
-    char pivote = cadena[(izq + der) / 2];
-    char temporal;
-    do {
-        while (cadena[izq] < pivote && izq < limite_der) {
-            izq++;
+    // only examine arrays of 2 or more elements.
+    if (j - i >= 1)
+    {
+        // The pivot point of the sort method is arbitrarily set to the first element int the array.
+        string pivote = cadena[i];
+        // only scan between the two indexes, until they meet.
+        while (j > i)
+        {
+            // from the left, if the current element is lexicographically less than the (original)
+            // first element in the String array, move on. Stop advancing the counter when we reach
+            // the right or an element that is lexicographically greater than the pivot String.
+            while (cadena[i].compareTo(pivote) < 0 && i <= limite_der && j > i){
+                i++;
+            }
+            // from the right, if the current element is lexicographically greater than the (original)
+            // first element in the String array, move on. Stop advancing the counter when we reach
+            // the left or an element that is lexicographically less than the pivot String.
+            while (cadena[j].compareTo(pivote) > 0 && j >= limite_izq && j >= i){
+                j--;
+            }
+            // check the two elements in the center, the last comparison before the scans cross.
+            if (j > i)
+                swapQuicksort(cadena, i, j);
         }
-        while (pivote < cadena[der] && der > limite_izq) {
-            der--;
-        }
-        if (izq <= der) {
-            temporal = cadena[izq];
-            cadena[izq] = cadena[der];
-            cadena[der] = temporal;
-            izq++;
-            der--;
-        }
+        // At this point, the two scans have crossed each other in the center of the array and stop.
+        // The left partition and right partition contain the right groups of numbers but are not
+        // sorted themselves. The following recursive code sorts the left and right partitions.
 
-
-    } while (izq <= der);
-    if (limite_izq < der) {
-        QuicksortAuxiliar(cadena, limite_izq, der);
+        // Swap the pivot point with the last element of the left partition.
+        swapQuicksort(cadena, limite_izq, j);
+        // sort left partition
+        quickSort(cadena, limite_izq, j - 1);
+        // sort right partition
+        quickSort(cadena, j + 1, limite_der);
     }
-    if (limite_der > izq) {
-        QuicksortAuxiliar(cadena, izq, limite_der);
-    }
+
+}
+void swapQuicksort(string& cadena, int i, int j){
+    string temp = cadena[i];
+    cadena[i] = cadena[j];
+    cadena[j] = temp;
 }
 
-void Quicksort(string &cadena) {
-    QuicksortAuxiliar(cadena, 0, cadena.length() - 1);
-}
 
 /**
  * Devuelve las letras
  * @param cadena
  */
 void imprime(string &cadena) {
+    cout<< cadena;
 
-    for (int i = 0; i < cadena.length(); i++) {
-        cout << cadena[i] << "\n";
-    }
 }
 
 

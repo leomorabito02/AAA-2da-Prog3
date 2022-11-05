@@ -3,6 +3,10 @@ using namespace std;
 #include <cstring>
 #include <ctype.h>
 #include <math.h>
+#include <sstream>
+#include <cctype>
+#include <utility>
+#include <algorithm>
 
 
 class Texto{
@@ -27,6 +31,6 @@ public:
 };
 
 unsigned int miHashFunc(string clave);
-void QuicksortAuxiliar(string&, int , int );
-void Quicksort(string&);
+void quicksort(string&, int , int );
+void swapQuicksort(string&, int, int);
 void imprime(string&);

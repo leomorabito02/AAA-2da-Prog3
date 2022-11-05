@@ -33,7 +33,7 @@ archivo.close();
 
     
     string caracts = ",.;:'-*+^=&%#$?¡¿!{[}]()";
-    for (char c: caracts){
+    for (char c: caracts) {
         prueba.erase(remove(prueba.begin(), prueba.end(), c), prueba.end());
     }
     stringstream input_stringstream(prueba);
@@ -43,17 +43,20 @@ archivo.close();
 /*
     HashIn ingreso = {"juan", 1};
 */
-int contador=0;
+    int contador = 0;
 
 
-while (getline(input_stringstream, lectura, ' '))
-    {
-        MyHashMap.put( lectura, 1);
+    while (getline(input_stringstream, lectura, ' ')) {
+        MyHashMap.put(lectura, 1);
         contador++;
     }
 
+<<<<<<< HEAD
     cout<<contador<<endl;
 
 cout<<"Saltos de linea: "<<contarSaltosLinea(prueba);
     
+=======
+    cout << contador;
+>>>>>>> 701f586cc1e404e877613a3d2de917f15d81d368
 }
