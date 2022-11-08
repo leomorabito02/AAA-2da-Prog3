@@ -43,6 +43,5 @@ while (getline(input_stringstream, lectura, ' '))
 
     cout<<contador<<endl;
 
-
     
 }

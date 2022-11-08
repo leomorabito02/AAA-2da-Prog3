@@ -79,7 +79,7 @@ void quicksort(string &cadena, int limite_izq, int limite_der) {
             // from the left, if the current element is lexicographically less than the (original)
             // first element in the String array, move on. Stop advancing the counter when we reach
             // the right or an element that is lexicographically greater than the pivot String.
-            while (cadena[i].compareTo(pivote) < 0 && i <= limite_der && j > i){
+            while ( strcmp(cadena[i],pivote) < 0 && i <= limite_der && j > i){
                 i++;
             }
             // from the right, if the current element is lexicographically greater than the (original)
