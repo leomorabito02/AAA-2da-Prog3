@@ -162,7 +162,7 @@ unsigned int HashMapList<K, T>::hashFunc(K clave) {
 template<class K, class T>
 void HashMapList<K, T>::getList(K clave) {
     unsigned int pos = hashFuncP(clave) % tamanio;
-
+    int sumaValor=0;
     if (tabla[pos] == NULL) {
         throw 404;
     }
@@ -170,9 +170,11 @@ void HashMapList<K, T>::getList(K clave) {
     Nodo<HashEntry<K, T>> *aux = tabla[pos]->getInicio();
 
     while (aux != NULL) {
-        std::cout << aux->getDato().getValor() << std::endl;
+         sumaValor += aux->getDato().getValor();
         aux = aux->getSiguiente();
     }
+
+    cout<<"Cantidad de Colisiones: "<<sumaValor<<endl;
 }
 
 #endif // U05_HASH_HASHMAP_HASHMAPLIST_H_

@@ -66,7 +66,6 @@ unsigned int miHashFunc(string clave) {
  */
 void quicksort(HashEntry<string, int> *cadena, int limite_izq, int limite_der) {
     int i = limite_izq;
-
     int j = limite_der;
     int mitad = (limite_izq + limite_der) / 2;
     HashEntry<string, int> pivote = cadena[mitad], aux = cadena[mitad];
@@ -96,18 +95,11 @@ void quicksort(HashEntry<string, int> *cadena, int limite_izq, int limite_der) {
     if (i < limite_der) {
         quicksort(cadena, i, limite_der);
     }
-
-}
-
-
-/**
- * Devuelve las letras
- * @param cadena
- */
-void imprime(string &cadena) {
     cout << cadena;
-
 }
+
+
+
 
 
 void Texto::bubbleAlfabetico(string texto) {

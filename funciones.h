@@ -32,6 +32,4 @@ public:
 };
 
 unsigned int miHashFunc(string clave);
-void quicksort(string&, int , int );
-
-void imprime(string&);
+void quicksort(HashEntry<string, int> *cadena, int limite_izq, int limite_der);

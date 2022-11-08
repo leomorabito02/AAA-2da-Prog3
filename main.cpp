@@ -9,9 +9,9 @@
 int main() {
 
     ifstream archivo;
-    string prueba;
+    string prueba = "la vaca lola la vaca lola. Tiene cabeza y tiene cola";
 
-
+/*
     archivo.open("archivoPrueba.txt", ios::in);
     if(archivo.fail()){
         cout<<"No se pudo abrir el archivo\n";
@@ -23,7 +23,7 @@ int main() {
     cout << "txt: " << prueba << endl;
     archivo.close();
 
-
+*/
 
     string caracts = ",.;:'-*+^=&%#$?¡¿!{[}]()";
     for (char c: caracts) {
@@ -43,8 +43,7 @@ int main() {
         MyHashMap.put(prueba, 1);
         contador++;
     }
+    cout << "Contador: "<<contador << endl;
 
-    cout << contador << endl;
-
-
+MyHashMap.getList("hola");
 }
