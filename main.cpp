@@ -15,13 +15,14 @@ int main() {
     archivo.open("archivoPrueba.txt", ios::in);
     if(archivo.fail()){
         cout<<"No se pudo abrir el archivo\n";
+        exit(1);
     }
     while (!archivo.eof()) {
         getline(archivo, prueba);
     }
-
-    archivo.close();
     cout << "txt: " << prueba << endl;
+    archivo.close();
+
 
 
     string caracts = ",.;:'-*+^=&%#$?¡¿!{[}]()";
