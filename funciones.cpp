@@ -2,9 +2,10 @@
 #include <fstream>
 
 Texto::Texto() {};
+
 Texto::Texto(string texto, int tamanioTexto) {
-this->texto = texto;
-this->TamanioTexto = tamanioTexto;
+    this->texto = texto;
+    this->TamanioTexto = tamanioTexto;
 }
 
 string Texto::getTexto() {
@@ -50,11 +51,11 @@ unsigned int miHashFunc(string clave) {
     unsigned int aux = 0, num;
     for (int i = 0; i < clave.length(); i++) {
         num = clave[i];
-        aux += pow (num, i);
+        aux += pow(num, i);
 
     }
-    cout << "Hash de la clave " << clave << ": " << aux%100000 << endl;
-    return aux%100000;
+    cout << "Hash de la clave " << clave << ": " << aux % 100000 << endl;
+    return aux % 100000;
 }
 
 /**
@@ -63,52 +64,39 @@ unsigned int miHashFunc(string clave) {
  * @param inicio
  * @param fin
  */
-void quicksort(string &cadena, int limite_izq, int limite_der) {
+void quicksort(HashEntry<string, int> *cadena, int limite_izq, int limite_der) {
     int i = limite_izq;
-    // index for the "right-to-left scan"
+
     int j = limite_der;
+    int mitad = (limite_izq + limite_der) / 2;
+    HashEntry<string, int> pivote = cadena[mitad], aux = cadena[mitad];
 
-    // only examine arrays of 2 or more elements.
-    if (j - i >= 1)
-    {
-        // The pivot point of the sort method is arbitrarily set to the first element int the array.
-        string pivote = cadena[i];
-        // only scan between the two indexes, until they meet.
-        while (j > i)
-        {
-            // from the left, if the current element is lexicographically less than the (original)
-            // first element in the String array, move on. Stop advancing the counter when we reach
-            // the right or an element that is lexicographically greater than the pivot String.
-            while ( strcmp(cadena[i],pivote) < 0 && i <= limite_der && j > i){
-                i++;
-            }
-            // from the right, if the current element is lexicographically greater than the (original)
-            // first element in the String array, move on. Stop advancing the counter when we reach
-            // the left or an element that is lexicographically less than the pivot String.
-            while (cadena[j].compareTo(pivote) > 0 && j >= limite_izq && j >= i){
-                j--;
-            }
-            // check the two elements in the center, the last comparison before the scans cross.
-            if (j > i)
-                swapQuicksort(cadena, i, j);
+    do {
+
+
+        while (cadena[i].getClave() < pivote.getClave()) {
+            i++;
         }
-        // At this point, the two scans have crossed each other in the center of the array and stop.
-        // The left partition and right partition contain the right groups of numbers but are not
-        // sorted themselves. The following recursive code sorts the left and right partitions.
+        while (cadena[i].getClave() < pivote.getClave()) {
+            j--;
+        }
+        if (j >= i) {
 
-        // Swap the pivot point with the last element of the left partition.
-        swapQuicksort(cadena, limite_izq, j);
-        // sort left partition
-        quickSort(cadena, limite_izq, j - 1);
-        // sort right partition
-        quickSort(cadena, j + 1, limite_der);
+            aux = cadena[i];
+            cadena[i] = cadena[j];
+            cadena[j] = aux;
+            i++;
+            j--;
+
+        }
+    } while (i <= j);
+    if (j > limite_izq) {
+        quicksort(cadena, limite_izq, j);
+    }
+    if (i < limite_der) {
+        quicksort(cadena, i, limite_der);
     }
 
-}
-void swapQuicksort(string& cadena, int i, int j){
-    string temp = cadena[i];
-    cadena[i] = cadena[j];
-    cadena[j] = temp;
 }
 
 
@@ -117,7 +105,7 @@ void swapQuicksort(string& cadena, int i, int j){
  * @param cadena
  */
 void imprime(string &cadena) {
-    cout<< cadena;
+    cout << cadena;
 
 }
 
@@ -175,7 +163,7 @@ void Texto::MostrarDiferentes() {
 }
 
 
-void Texto::lecturaTXT(){
+void Texto::lecturaTXT() {
 
 
 }

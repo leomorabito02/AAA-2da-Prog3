@@ -1,4 +1,5 @@
 using namespace std;
+#include "HashEntry.h"
 #include <iostream>
 #include <cstring>
 #include <ctype.h>
@@ -32,5 +33,5 @@ public:
 
 unsigned int miHashFunc(string clave);
 void quicksort(string&, int , int );
-void swapQuicksort(string&, int, int);
+
 void imprime(string&);
