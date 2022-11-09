@@ -48,10 +48,11 @@ int Texto::contarSaltosLinea() {
 }
 
 unsigned int miHashFunc(string clave) {
-    unsigned int aux = 0, num;
+    unsigned int aux = 0, num, exp = 1;
     for (int i = 0; i < clave.length(); i++) {
-        num = clave[i];
-        aux += pow(num, i);
+
+        int num = clave[i];
+        aux += pow(num, exp++);
 
     }
     cout << "Hash de la clave " << clave << ": " << aux % 100000 << endl;
@@ -97,9 +98,6 @@ void quicksort(HashEntry<string, int> *cadena, int limite_izq, int limite_der) {
     }
     cout << cadena;
 }
-
-
-
 
 
 void Texto::bubbleAlfabetico(string texto) {

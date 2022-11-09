@@ -7,4 +7,5 @@ add_executable(Repos
         HashEntry.h
         lista.h
         nodo.h
-        HashClassInst.h)
+        archivoPrueba.txt
+        )
